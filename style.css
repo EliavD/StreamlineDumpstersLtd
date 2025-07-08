@@ -149,7 +149,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 77, 64, 0.85) 0%, rgba(0, 105, 92, 0.75) 100%);
+  background: linear-gradient(135deg, rgba(1, 176, 187, 0.85) 0%, rgba(0, 105, 92, 0.75) 100%);
   z-index: 1;
 }
 
