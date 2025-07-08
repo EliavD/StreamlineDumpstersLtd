@@ -66,6 +66,7 @@ footer {
   font-weight: bold;
   border: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .dropdown-content {
@@ -80,4 +81,18 @@ footer {
 .dropdown-content a {
   color: #333;
   padding: 10px 16px;
-  text-deco
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  text-decoration: underline;
+}
