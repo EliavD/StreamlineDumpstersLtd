@@ -17,7 +17,24 @@ header {
   max-width: 1000px;
   margin: 0 auto;
 }
+/* Book Now button styling - Add this to your style.css */
+.book-now-btn {
+  background-color: #01b0bb;
+  color: white !important;
+  padding: 10px 20px;
+  text-decoration: none !important;
+  border-radius: 4px; /* Match your existing cta-button radius */
+  font-weight: bold;
+  margin-left: 20px; /* Match your existing nav spacing */
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
 
+.book-now-btn:hover {
+  background-color: #018a94;
+  color: white !important;
+  text-decoration: none !important; /* Override the nav a:hover underline */
+}
 .logo {
   height: 90px;
   max-width: 200px;
