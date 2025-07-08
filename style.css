@@ -27,6 +27,7 @@ header {
 nav {
   display: flex;
   align-items: center;
+  gap: 0; /* Remove any gaps between flex items */
 }
 
 nav a {
@@ -65,6 +66,7 @@ footer {
   position: relative;
   display: inline-block;
   margin-left: 20px;
+  align-self: center; /* Ensure it aligns with other nav items */
 }
 
 /* The trigger word with arrow */
@@ -78,14 +80,10 @@ footer {
   border: none;
   background: none;
   display: inline-block;
+  line-height: 1; /* Match line height with nav links */
 }
 
-/* Add arrow indicator */
-.dropbtn::after {
-  content: " ▼";
-  font-size: 12px;
-  margin-left: 5px;
-}
+/* Remove the custom arrow since you're using &#9662; in HTML */
 
 /* Hover effect to match nav links */
 .dropbtn:hover {
