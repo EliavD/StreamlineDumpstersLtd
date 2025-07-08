@@ -17,6 +17,13 @@ header {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+/* New rule to group nav and book-now button on the right */
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
 /* Book Now button styling - Add this to your style.css */
 .book-now-btn {
   background-color: #01b0bb;
@@ -35,6 +42,7 @@ header {
   color: white !important;
   text-decoration: none !important; /* Override the nav a:hover underline */
 }
+
 .logo {
   height: 90px;
   max-width: 200px;
