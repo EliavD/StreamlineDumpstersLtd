@@ -131,7 +131,7 @@ footer {
 /* Hero Section Styles */
 .hero-section {
   position: relative;
-  background-image: url('DublinDumpsterrental.jpg');
+  background-image: url('./DublinDumpsterrental.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
