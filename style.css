@@ -53,22 +53,32 @@ footer {
   text-align: center;
   color: #555;
 }
-/* Dropdown menu */
+/* Dropdown Container */
 .dropdown {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
 }
 
+/* The trigger word with arrow */
 .dropbtn {
-  background-color: white;
   color: #333;
-  padding: 8px 16px;
   font-weight: bold;
-  border: none;
   cursor: pointer;
+  text-decoration: none;
   font-size: 16px;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
+/* Hover effect to match nav links */
+.dropbtn:hover {
+  text-decoration: underline;
+}
+
+/* The dropdown box */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -78,6 +88,7 @@ footer {
   min-width: 160px;
 }
 
+/* Links inside dropdown */
 .dropdown-content a {
   color: #333;
   padding: 10px 16px;
@@ -89,10 +100,7 @@ footer {
   background-color: #f1f1f1;
 }
 
+/* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.dropdown:hover .dropbtn {
-  text-decoration: underline;
 }
