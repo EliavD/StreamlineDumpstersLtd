@@ -152,7 +152,70 @@ footer {
 .area-page-link {
   display: none;
 }
+/* Subheader Styles - Add this to your style.css */
+.subheader {
+  background-color: #01b0bb;
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+}
 
+.subheader-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-item .icon {
+  font-size: 16px;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.contact-item a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.contact-item span {
+  color: white;
+  font-weight: 500;
+}
+
+/* Responsive Design for Subheader */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .subheader {
+    padding: 15px 20px;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+}
 /* Hero Section Styles */
 .hero-section {
   position: relative;
