@@ -23,6 +23,12 @@ header {
   max-width: 200px;
 }
 
+/* Make sure nav items are aligned properly */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav a {
   margin-left: 20px;
   text-decoration: none;
@@ -53,11 +59,11 @@ footer {
   text-align: center;
   color: #555;
 }
-/* Dropdown Container */
+
+/* Dropdown Container - Fixed alignment */
 .dropdown {
   position: relative;
   display: inline-block;
-  vertical-align: middle;
   margin-left: 20px;
 }
 
@@ -71,6 +77,14 @@ footer {
   padding: 0;
   border: none;
   background: none;
+  display: inline-block;
+}
+
+/* Add arrow indicator */
+.dropbtn::after {
+  content: " ▼";
+  font-size: 12px;
+  margin-left: 5px;
 }
 
 /* Hover effect to match nav links */
@@ -78,29 +92,40 @@ footer {
   text-decoration: underline;
 }
 
-/* The dropdown box */
+/* The dropdown box - Fixed positioning and z-index */
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
+  left: 0;
   background-color: white;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-  z-index: 1;
-  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 200px;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 /* Links inside dropdown */
 .dropdown-content a {
   color: #333;
-  padding: 10px 16px;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
+  margin-left: 0 !important; /* Override the nav a margin */
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  text-decoration: none;
 }
 
 /* Show dropdown on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* Hide individual area pages from main navigation if they exist */
+.area-page-link {
+  display: none;
 }
