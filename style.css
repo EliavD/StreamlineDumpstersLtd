@@ -4,154 +4,174 @@ body {
   background-color: #f8f8f8;
 }
 
+/* Base styles for the header container */
 .header {
-  background-color: white;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Flex container for logo and navigation */
 .header-content {
-  display: flex;
-  align-items: center; /* Changed from 'right' to 'center' for vertical alignment */
-  justify-content: space-between; /* Keeps logo on left, navigation on right */
-  max-width: 1000px;
-  margin: 0 auto;
+    display: flex;
+    align-items: center; /* Vertically centers the logo and navigation */
+    justify-content: space-between; /* Pushes the logo to the left and navigation to the right */
+    max-width: 1000px; /* Limits the content width */
+    margin: 0 auto; /* Centers the content block */
+    padding: 0 20px; /* Adds horizontal padding for smaller screens */
 }
 
-/* New rule to group nav and book-now button on the right */
-.nav-container {
-  display: flex;
-  align-items: center;
-}
-
-/* Book Now button styling - Add this to your style.css */
-.book-now-btn {
-  background-color: #01b0bb;
-  color: white !important;
-  padding: 10px 20px;
-  text-decoration: none !important;
-  border-radius: 4px; /* Match your existing cta-button radius */
-  font-weight: bold;
-  margin-left: 20px; /* Match your existing nav spacing */
-  transition: background-color 0.3s ease;
-  display: inline-block;
-}
-
-.book-now-btn:hover {
-  background-color: #018a94;
-  color: white !important;
-  text-decoration: none !important; /* Override the nav a:hover underline */
-}
-
+/* Logo styling */
 .logo {
-  height: auto; /* Allow height to adjust proportionally */
-  width: 250px; /* **Increased width for a bigger logo** */
-  max-width: none; /* **Remove max-width constraint to allow for larger size** */
-}
-/* Make sure nav items are aligned properly */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 0; /* Remove any gaps between flex items */
+    height: auto; /* Ensures the image aspect ratio is maintained */
+    width: 250px; /* Makes the logo larger. Adjust as needed. */
+    max-width: none; /* Overrides any previous max-width restriction */
 }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+/* Container for navigation links and book now button */
+.nav-container {
+    display: flex;
+    align-items: center; /* Vertically aligns nav links and button */
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* Styling for direct navigation links (Home, Contact) */
+.nav-container nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 0;
+    margin-left: 20px; /* Spacing between navigation items */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #004d40;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  margin-top: 10px;
+.nav-container nav a:hover {
+    color: #01b0bb;
+    text-decoration: underline;
 }
 
-.cta-button:hover {
-  background-color: #00695c;
-}
-
-footer {
-  margin-top: 20px;
-  text-align: center;
-  color: #555;
-}
-
-/* Dropdown Container - Fixed alignment */
+/* Dropdown specific styles */
 .dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: 20px;
-  align-self: center; /* Ensure it aligns with other nav items */
+    position: relative; /* Essential for positioning dropdown content */
+    display: inline-block; /* Allows the dropdown to sit inline with other nav items */
+    margin-left: 20px; /* Spacing for the dropdown button */
 }
 
-/* The trigger word with arrow */
 .dropbtn {
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 0;
-  border: none;
-  background: none;
-  display: inline-block;
-  line-height: 1; /* Match line height with nav links */
+    background-color: transparent;
+    color: #333;
+    padding: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-/* Remove the custom arrow since you're using &#9662; in HTML */
-
-/* Hover effect to match nav links */
 .dropbtn:hover {
-  text-decoration: underline;
+    color: #01b0bb;
+    text-decoration: underline;
 }
 
-/* The dropdown box - Fixed positioning and z-index */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: white;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  z-index: 1000;
-  min-width: 200px;
-  border-radius: 4px;
-  overflow: hidden;
+    display: none; /* Hidden by default */
+    position: absolute; /* Positions content relative to .dropdown */
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1; /* Ensures dropdown appears on top of other content */
+    border-radius: 4px;
+    overflow: hidden; /* Ensures content respects border-radius */
+    top: 100%; /* Positions the dropdown content directly below the button */
+    left: 0; /* Aligns dropdown content with the left edge of the button */
 }
 
-/* Links inside dropdown */
 .dropdown-content a {
-  color: #333;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  margin-left: 0 !important; /* Override the nav a margin */
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Makes links take full width for easier clicking */
+    text-align: left;
+    transition: background-color 0.3s ease;
+    margin-left: 0; /* Resets margin for dropdown links */
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-  text-decoration: none;
+    background-color: #f1f1f1;
+    color: #01b0bb;
 }
 
-/* Show dropdown on hover */
+/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
-/* Hide individual area pages from main navigation if they exist */
-.area-page-link {
-  display: none;
+/* Book Now button styling */
+.book-now-btn {
+    background-color: #01b0bb;
+    color: white !important; /* Ensures text color is white */
+    padding: 10px 20px;
+    text-decoration: none !important; /* Removes underline */
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 20px; /* Spacing from navigation */
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
 }
+
+.book-now-btn:hover {
+    background-color: #018a94;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stacks items vertically on small screens */
+        align-items: center; /* Centers items when stacked */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+
+    .logo {
+        margin-bottom: 15px; /* Add space below logo when stacked */
+        width: 180px; /* Adjust logo size for smaller screens */
+    }
+
+    .nav-container {
+        flex-direction: column; /* Stacks nav links and button */
+        width: 100%; /* Makes nav container take full width */
+        margin-top: 10px;
+    }
+
+    .nav-container nav {
+        display: flex; /* Keeps nav items horizontal if possible */
+        flex-wrap: wrap; /* Allows items to wrap if space is tight */
+        justify-content: center; /* Centers nav links */
+        width: 100%;
+    }
+
+    .nav-container nav a,
+    .dropdown {
+        margin: 5px 10px; /* Adjust spacing for stacked links */
+    }
+
+    .dropdown-content {
+        position: static; /* Allows dropdown to flow naturally in stacked layout */
+        box-shadow: none; /* Remove shadow when static */
+        border: none; /* Remove border when static */
+        min-width: unset; /* Remove min-width restriction */
+        width: 100%; /* Take full width of parent */
+    }
+
+    .book-now-btn {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 15px; /* Add space above button when stacked */
+        width: calc(100% - 40px); /* Make button wider, account for padding */
+        text-align: center;
+    }
+}
+
 /* Subheader Styles - Add this to your style.css */
 .subheader {
   background-color: #2c3e50; /* Darker blue-grey, similar to a deep navy */
