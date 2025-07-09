@@ -4,7 +4,7 @@ body {
   background-color: #f8f8f8;
 }
 
-header {
+.header {
   background-color: white;
   padding: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -12,8 +12,8 @@ header {
 
 .header-content {
   display: flex;
-  align-items: right;
-  justify-content: space-between;
+  align-items: center; /* Changed from 'right' to 'center' for vertical alignment */
+  justify-content: space-between; /* Keeps logo on left, navigation on right */
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -44,10 +44,10 @@ header {
 }
 
 .logo {
-  height: 100px;
-  max-width: 200px;
+  height: auto; /* Allow height to adjust proportionally */
+  width: 250px; /* **Increased width for a bigger logo** */
+  max-width: none; /* **Remove max-width constraint to allow for larger size** */
 }
-
 /* Make sure nav items are aligned properly */
 nav {
   display: flex;
