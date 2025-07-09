@@ -154,7 +154,7 @@ footer {
 }
 /* Subheader Styles - Add this to your style.css */
 .subheader {
-  background-color: #01b0bb;
+  background-color: #2c3e50; /* Darker blue-grey, similar to a deep navy */
   color: white;
   padding: 10px 20px;
   font-size: 14px;
@@ -180,7 +180,12 @@ footer {
 }
 
 .contact-item .icon {
-  font-size: 16px;
+  font-size: 18px; /* Slightly larger for better visibility */
+  /* Emojis are images/unicode, so direct color change is limited. */
+  /* However, we can use filter to subtly adjust their appearance. */
+  /* You might need to experiment with these values. */
+  filter: grayscale(20%) brightness(120%); /* Make them slightly less vibrant and brighter */
+  line-height: 1; /* Ensures vertical alignment */
 }
 
 .contact-item a {
