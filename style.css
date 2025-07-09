@@ -39,6 +39,7 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+    font-size: 16px; /* Explicitly set font size for consistency */
     padding: 5px 0;
     margin-left: 20px; /* Spacing between navigation items */
     transition: color 0.3s ease, text-decoration 0.3s ease;
@@ -60,7 +61,7 @@ body {
     background-color: transparent;
     color: #333;
     padding: 5px 0;
-    font-size: 16px;
+    font-size: 16px; /* Ensures consistency with other nav links */
     font-weight: bold;
     border: none;
     cursor: pointer;
@@ -91,6 +92,7 @@ body {
     text-decoration: none;
     display: block; /* Makes links take full width for easier clicking */
     text-align: left;
+    font-size: 16px; /* Ensures consistency with other nav links */
     transition: background-color 0.3s ease;
     margin-left: 0; /* Resets margin for dropdown links */
 }
