@@ -1,1 +1,434 @@
+/*
+===============================================
+INDEX.CSS - Home Page Specific Styles
+Requires base.css to be loaded first for CSS variables
+===============================================
+*/
 
+/* ===== HERO SECTION ===== */
+.hero-section {
+  background: linear-gradient(135deg, var(--background-light) 0%, #e8f5e8 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pattern for eco-friendly texture */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(1, 176, 187, 0.08) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--medium-gray);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta .btn-primary {
+  font-size: 16px;
+  padding: 15px 30px;
+  background-color: var(--primary-green);
+}
+
+/* ===== LOOPING CAROUSEL SECTION ===== */
+.carousel-section {
+  background-color: var(--white);
+  padding: 60px 0;
+  border-top: 3px solid var(--primary-green);
+  border-bottom: 3px solid var(--primary-green);
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask: linear-gradient(90deg, 
+    transparent 0%, 
+    black 10%, 
+    black 90%, 
+    transparent 100%);
+  -webkit-mask: linear-gradient(90deg, 
+    transparent 0%, 
+    black 10%, 
+    black 90%, 
+    transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(300px * 12); /* Adjust based on number of items */
+  animation: scroll 30s linear infinite;
+}
+
+/* Infinite scroll keyframes */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-300px * 6)); /* Half of total width for seamless loop */
+  }
+}
+
+.carousel-item {
+  flex: 0 0 300px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.carousel-item:hover {
+  border-color: var(--primary-green);
+  background-color: var(--white);
+}
+
+/* Logo/content styling within carousel */
+.carousel-logo {
+  max-width: 180px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(60%) opacity(0.8);
+  transition: var(--transition);
+}
+
+.carousel-item:hover .carousel-logo {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Text alternative for logos */
+.carousel-text {
+  font-family: var(--font-headings);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  text-align: center;
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.carousel-item:hover .carousel-text {
+  opacity: 1;
+  color: var(--primary-green);
+}
+
+/* ===== SERVICE GRID SECTION ===== */
+.services-section {
+  background-color: var(--background-light);
+  padding: 80px 0;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-header h2 {
+  font-size: 2.5rem;
+  color: var(--accent-dark);
+  margin-bottom: 1rem;
+}
+
+.services-header p {
+  font-size: 1.125rem;
+  color: var(--medium-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle eco-friendly accent */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-teal));
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-green);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+  background-color: var(--accent-teal);
+  transform: scale(1.1);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  color: var(--accent-dark);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-card:hover .service-title {
+  color: var(--primary-green);
+}
+
+.service-description {
+  color: var(--medium-gray);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.service-features {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.service-features li {
+  color: var(--medium-gray);
+  padding: 5px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.service-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+}
+
+.service-price {
+  font-family: var(--font-headings);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 20px;
+}
+
+.service-price span {
+  font-size: 1rem;
+  color: var(--medium-gray);
+  font-weight: 400;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+  background: linear-gradient(135deg, var(--accent-dark) 0%, #34495e 100%);
+  color: var(--white);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(76, 175, 80, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(1, 176, 187, 0.15) 0%, transparent 50%);
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.cta-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--light-gray);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE DESIGN FOR HOME PAGE ===== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel-item {
+    flex: 0 0 250px;
+  }
+  
+  .carousel-track {
+    width: calc(250px * 12);
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 6));
+    }
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .service-card {
+    padding: 25px 20px;
+  }
+  
+  .services-header h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-title {
+    font-size: 2rem;
+  }
+  
+  .cta-description {
+    font-size: 1.125rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 60px 0 50px;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .carousel-section {
+    padding: 40px 0;
+  }
+  
+  .services-section {
+    padding: 60px 0;
+  }
+  
+  .services-header {
+    margin-bottom: 40px;
+  }
+  
+  .cta-section {
+    padding: 60px 0;
+  }
+}
+
+/* ===== ANIMATION PERFORMANCE OPTIMIZATION ===== */
+.carousel-track {
+  will-change: transform;
+}
+
+.service-card {
+  will-change: transform;
+}
+
+/* Pause animation on hover for better UX */
+.carousel-wrapper:hover .carousel-track {
+  animation-play-state: paused;
+}
